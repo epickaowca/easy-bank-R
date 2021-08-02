@@ -7,7 +7,9 @@ declare module "styled-components" {
       desktop: "@media only screen and (min-width: 1200px)";
     };
     colors: {
-      primary: "#ffffff";
+      headingText: "#2D314D";
+      primary: "#FAFAFA";
+      secondary: "#F3F4F6";
     };
   }
 }
