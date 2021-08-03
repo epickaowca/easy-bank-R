@@ -33,6 +33,14 @@ Link.args = {
   content: "Contact",
 };
 
+export const IconLink = basic.bind({});
+IconLink.args = {
+  textTag: "a",
+  href: "https://www.facebook.com/",
+  icoName: "icon-facebook.svg",
+  presentationCase: true,
+};
+
 export default {
   title: "atoms/typography",
   component: Typography,
