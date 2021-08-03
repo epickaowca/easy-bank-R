@@ -39,6 +39,7 @@ IconLink.args = {
   href: "https://www.facebook.com/",
   icoName: "icon-facebook.svg",
   presentationCase: true,
+  blank: true,
 };
 
 export default {

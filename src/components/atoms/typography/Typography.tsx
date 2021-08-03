@@ -1,6 +1,5 @@
 import { FC } from "react";
 import StyledTypography, { STInterface } from "./Typography.style";
-const prePath = "../../assets";
 
 interface TypograpgyInterface extends STInterface {
   content?: string;
@@ -9,8 +8,8 @@ interface TypograpgyInterface extends STInterface {
 const Text: FC<TypograpgyInterface> = (props) => {
   const { content, icoName } = props;
   let Icon = null;
-  if (icoName) {
-    Icon = require(`${prePath}/${icoName}`).default;
+  if (props.icoName) {
+    Icon = require(`../../assets/${props.icoName}`).default;
   }
   return (
     <StyledTypography {...props}>

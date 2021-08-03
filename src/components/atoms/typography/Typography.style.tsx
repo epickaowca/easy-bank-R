@@ -7,12 +7,13 @@ export type STInterface = {
   icoName?: string;
   presentationCase?: boolean;
   footerCase?: boolean;
+  blank?: boolean;
 };
 
 const StyledText = styled.p.attrs<STInterface>((p) => ({
   as: p.textTag || "p",
   href: p.href || "#",
-  target: "_blank",
+  target: p.blank ? "_blank" : "",
 }))<STInterface>`
   color: ${(p) => p.textColor || "black"};
   ${(p) =>
