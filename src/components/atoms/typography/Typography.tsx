@@ -3,6 +3,7 @@ import StyledTypography, { STInterface } from "./Typography.style";
 
 interface TypograpgyInterface extends STInterface {
   content?: string;
+  icoName?: string;
 }
 
 const Text: FC<TypograpgyInterface> = (props) => {

@@ -3,23 +3,20 @@ import Typography from "./Typography";
 
 const basic: ComponentStory<any> = (args) => <Typography {...args} />;
 
-export const heading1 = basic.bind({});
-heading1.args = {
-  textColor: "#2D314D",
+export const h1 = basic.bind({});
+h1.args = {
   textTag: "h1",
   content: "Lorem ipsum dolor sit amet",
 };
 
-export const heading2 = basic.bind({});
-heading2.args = {
-  textColor: "#000000",
+export const h3 = basic.bind({});
+h3.args = {
   textTag: "h3",
   content: "Lorem ipsum dolor sit amet, consectetur",
 };
 
 export const Paragraf = basic.bind({});
 Paragraf.args = {
-  textColor: "rgba(0,0,0,.7)",
   textTag: "p",
   content:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis accumsan velit, et dignissim tortor",
@@ -39,13 +36,9 @@ IconLink.args = {
   href: "https://www.facebook.com/",
   icoName: "icon-facebook.svg",
   presentationCase: true,
-  blank: true,
 };
 
 export default {
   title: "atoms/typography",
   component: Typography,
-  argTypes: {
-    textColor: { control: "color" },
-  },
 } as ComponentMeta<any>;

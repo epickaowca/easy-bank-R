@@ -9,6 +9,23 @@ HeaderCase.args = {
     { content: "Home", href: "#home" },
     { content: "About", href: "#about" },
     { content: "Contact", href: "#contact" },
+    { content: "Blog", href: "#blog" },
+    { content: "Careers", href: "#careers" },
+  ],
+};
+
+export const FooterCase = basic.bind({});
+FooterCase.args = {
+  footerCase: true,
+  navItems: [
+    { content: "About Us", href: "#about" },
+    { content: "Contact", href: "#contact" },
+    { content: "Blog", href: "#blog" },
+    { content: "Careers", href: "#careers" },
+    { content: "Suport", href: "#support" },
+    { content: "Privacy Policy", href: "#policy" },
+    { content: "Lorem", href: "#lorem" },
+    { content: "Lorem ipsum", href: "#ipsum" },
   ],
 };
 

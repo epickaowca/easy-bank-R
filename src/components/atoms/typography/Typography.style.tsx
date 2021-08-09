@@ -1,28 +1,23 @@
 import styled from "styled-components";
 
 export type STInterface = {
-  textTag?: string;
-  textColor?: string;
+  textTag: "p" | "a" | "h1" | "h3";
   href?: string;
-  icoName?: string;
   presentationCase?: boolean;
-  footerCase?: boolean;
-  blank?: boolean;
 };
 
 const StyledText = styled.p.attrs<STInterface>((p) => ({
   as: p.textTag || "p",
   href: p.href || "#",
-  target: p.blank ? "_blank" : "",
 }))<STInterface>`
-  color: ${(p) => p.textColor || "black"};
-  ${(p) =>
-    p.textTag === "a" &&
-    `
-      &:hover {
-        opacity: 0.7;
-      }
-  `}
+  color: ${(p) =>
+    p.textTag === "h1"
+      ? p.theme.colors.headingText
+      : p.textTag === "p"
+      ? "rgba(0,0,0,.7)"
+      : "black"};
+  font-size: ${(p) =>
+    p.textTag === "h1" ? "2rem" : p.textTag === "h3" ? "1.2rem" : "1rem"};
   ${(p) =>
     p.presentationCase &&
     `

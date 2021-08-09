@@ -1,14 +1,14 @@
 import { FC } from "react";
-import StyledNav from "./Navigation.style";
+import StyledNav, { StyledNavInterface } from "./Navigation.style";
 import Typography from "../../atoms/typography/Typography";
 
-interface NavInterface {
+interface NavInterface extends StyledNavInterface {
   navItems: { content: string; href: string }[];
 }
 
-const Navigation: FC<NavInterface> = ({ navItems }) => {
+const Navigation: FC<NavInterface> = ({ navItems, footerCase }) => {
   return (
-    <StyledNav>
+    <StyledNav footerCase={footerCase}>
       <ul>
         {navItems.map(({ href, content }, index) => (
           <li key={index}>
