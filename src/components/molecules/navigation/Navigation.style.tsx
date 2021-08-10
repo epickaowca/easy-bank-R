@@ -26,15 +26,17 @@ const styles = {
     border-radius: 5px;
     background: white;
     position: absolute;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.2);
     `,
   headerCaseTablet: `
-  padding: unset;
-  width: unset;
-  transform: unset;
-  top: unset;
-  left: unset;
-  border-radius: unset;
-  position: relative
+    padding: unset;
+    width: unset;
+    transform: unset;
+    top: unset;
+    left: unset;
+    border-radius: unset;
+    box-shadow: unset;
+  position: relative;
     & > ul {
       flex-direction: row;
     }
@@ -56,7 +58,7 @@ const StyledNav = styled.nav<StyledNavInterface>(
   ({
     footerCase,
     theme: {
-      media: { tablet },
+      media: { tablet, desktop1600, desktop },
     },
   }) => `
   & > ul{
@@ -64,6 +66,12 @@ const StyledNav = styled.nav<StyledNavInterface>(
     gap: 15px;
     flex-direction: column;
     text-align: center;
+    ${desktop}{
+      gap: 45px;
+    }
+    ${desktop1600}{
+      gap: 50px;
+    }
   }
 }
 ${choosedStyles(tablet, footerCase)}

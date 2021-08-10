@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { btnStyles } from "../button/Button.style";
 
 export type STInterface = {
-  textTag: "p" | "a" | "h1" | "h3";
+  textTag: "p" | "a" | "h1" | "h3" | "button";
   href?: string;
   presentationCase?: boolean;
 };
@@ -25,6 +26,7 @@ const StyledText = styled.p.attrs<STInterface>((p) => ({
       padding: 15px;
       padding-top: 20px;
   `}
+  ${(p) => p.textTag === "button" && btnStyles}
 `;
 
 export default StyledText;

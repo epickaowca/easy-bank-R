@@ -21,6 +21,19 @@ const GlobalStyles = createGlobalStyle`
     list-style-type: none;
   }
 
+  html{
+    font-size: 16px;
+  }
+  ${(p) => p.theme.media.desktop}{
+    html{
+      font-size: 18px;
+    }
+  }
+  ${(p) => p.theme.media.desktop1600}{
+    html{
+      font-size: 20px;
+    }
+  }
 `;
 
 export default GlobalStyles;

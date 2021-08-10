@@ -2,17 +2,18 @@ import { FC } from "react";
 import StyledNav, { StyledNavInterface } from "./Navigation.style";
 import Typography from "../../atoms/typography/Typography";
 
-interface NavInterface extends StyledNavInterface {
+export interface NavInterface extends StyledNavInterface {
   navItems: { content: string; href: string }[];
+  onClick?: () => void;
 }
 
-const Navigation: FC<NavInterface> = ({ navItems, footerCase }) => {
+const Navigation: FC<NavInterface> = ({ navItems, footerCase, onClick }) => {
   return (
     <StyledNav footerCase={footerCase}>
       <ul>
-        {navItems.map(({ href, content }, index) => (
+        {navItems.map((elem, index) => (
           <li key={index}>
-            <Typography textTag="a" href={href} content={content} />
+            <Typography {...elem} textTag="a" onClick={onClick} />
           </li>
         ))}
       </ul>

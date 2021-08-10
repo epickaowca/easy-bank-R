@@ -38,6 +38,12 @@ IconLink.args = {
   presentationCase: true,
 };
 
+export const IconButton = basic.bind({});
+IconButton.args = {
+  textTag: "button",
+  icoName: "icon-hamburger.svg",
+};
+
 export default {
   title: "atoms/typography",
   component: Typography,

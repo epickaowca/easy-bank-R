@@ -1,19 +1,21 @@
 import { FC } from "react";
 import StyledTypography, { STInterface } from "./Typography.style";
+import { getIco } from "../../particles/utilities";
 
-interface TypograpgyInterface extends STInterface {
+export interface TypograpgyInterface extends STInterface {
   content?: string;
   icoName?: string;
+  onClick?: () => void;
 }
 
 const Text: FC<TypograpgyInterface> = (props) => {
-  const { content, icoName } = props;
+  const { content, icoName, onClick } = props;
   let Icon = null;
-  if (props.icoName) {
-    Icon = require(`../../assets/${props.icoName}`).default;
+  if (icoName) {
+    Icon = getIco(icoName);
   }
   return (
-    <StyledTypography {...props}>
+    <StyledTypography onClick={onClick} {...props}>
       {content ? content : icoName ? <img src={Icon} /> : "null"}
     </StyledTypography>
   );
