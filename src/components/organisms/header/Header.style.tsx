@@ -8,6 +8,7 @@ interface styledInterface {
 const StyledHeader = styled.header<styledInterface>`
   margin: auto;
   max-width: 1920px;
+  background: white;
   & > div {
     display: flex;
     justify-content: space-between;

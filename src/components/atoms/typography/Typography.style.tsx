@@ -16,7 +16,7 @@ const StyledText = styled.p.attrs<STInterface>((p) => ({
     p.textTag === "h1"
       ? p.theme.colors.headingText
       : p.textTag === "p"
-      ? "rgba(0,0,0,.7)"
+      ? "rgba(0,0,0,.5)"
       : "black"};
   font-size: ${(p) =>
     p.textTag === "h1" ? "2rem" : p.textTag === "h3" ? "1.2rem" : "1rem"};
