@@ -15,6 +15,13 @@ h3.args = {
   content: "Lorem ipsum dolor sit amet, consectetur",
 };
 
+export const h3Light = basic.bind({});
+h3Light.args = {
+  textTag: "h3",
+  content: "Lorem ipsum dolor sit amet, consectetur",
+  lightCase: true,
+};
+
 export const Paragraf = basic.bind({});
 Paragraf.args = {
   textTag: "p",

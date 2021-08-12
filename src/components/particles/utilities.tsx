@@ -1,3 +1,3 @@
-export const getIco = (icoName: string) => {
+export const getImg = (icoName: string) => {
   return require(`../assets/${icoName}`).default;
 };

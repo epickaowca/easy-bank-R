@@ -5,6 +5,7 @@ export type STInterface = {
   textTag: "p" | "a" | "h1" | "h3" | "button";
   href?: string;
   presentationCase?: boolean;
+  lightCase?: boolean;
 };
 
 const StyledText = styled.p.attrs<STInterface>((p) => ({
@@ -19,6 +20,7 @@ const StyledText = styled.p.attrs<STInterface>((p) => ({
       : "black"};
   font-size: ${(p) =>
     p.textTag === "h1" ? "2rem" : p.textTag === "h3" ? "1.2rem" : "1rem"};
+  ${(p) => p.lightCase && `font-weight: 400;`};
   ${(p) =>
     p.presentationCase &&
     `

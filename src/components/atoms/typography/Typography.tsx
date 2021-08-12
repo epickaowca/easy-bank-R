@@ -1,6 +1,6 @@
 import { FC } from "react";
 import StyledTypography, { STInterface } from "./Typography.style";
-import { getIco } from "../../particles/utilities";
+import { getImg } from "../../particles/utilities";
 
 export interface TypograpgyInterface extends STInterface {
   content?: string;
@@ -12,7 +12,7 @@ const Text: FC<TypograpgyInterface> = (props) => {
   const { content, icoName, onClick } = props;
   let Icon = null;
   if (icoName) {
-    Icon = getIco(icoName);
+    Icon = getImg(icoName);
   }
   return (
     <StyledTypography onClick={onClick} {...props}>
