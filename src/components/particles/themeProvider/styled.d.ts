@@ -4,6 +4,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     media: {
       tablet: "@media only screen and (min-width: 768px)";
+      desktop1000: "@media only screen and (min-width: 1000px)";
       desktop: "@media only screen and (min-width: 1200px)";
       desktop1600: "@media only screen and (min-width: 1600px)";
     };

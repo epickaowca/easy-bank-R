@@ -13,18 +13,20 @@ import Button from "../../atoms/button/Button";
 const HeroSection: FC = () => {
   return (
     <StyledHeroSection>
-      <Picture>
-        <BgImg bgMobile={bgMobile} bgDesktop={bgDesktop} />
-        <img src={mockupsImg} alt="heroImage" />
-      </Picture>
-      <Article>
-        <Typography textTag="h1" content="Next generation digital banking" />
-        <Typography
-          textTag="p"
-          content="Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more."
-        />
-        <Button content="Request Invite" />
-      </Article>
+      <div>
+        <Picture>
+          <BgImg bgMobile={bgMobile} bgDesktop={bgDesktop} />
+          <img src={mockupsImg} alt="heroImage" />
+        </Picture>
+        <Article>
+          <Typography textTag="h1" content="Next generation digital banking" />
+          <Typography
+            textTag="p"
+            content="Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more."
+          />
+          <Button content="Request Invite" />
+        </Article>
+      </div>
     </StyledHeroSection>
   );
 };

@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
   html,
   body {
     overflow-x: hidden;
-    background: ${(p) => p.theme.colors.primary};
+    height: 100%;
   }
 
   a {
