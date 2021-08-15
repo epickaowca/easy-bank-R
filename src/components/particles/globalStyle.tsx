@@ -25,14 +25,20 @@ const GlobalStyles = createGlobalStyle`
   html{
     font-size: 16px;
   }
-  ${(p) => p.theme.media.desktop}{
+
+  ${(p) => p.theme.media.desktop1000}{
     html{
       font-size: 18px;
     }
   }
-  ${(p) => p.theme.media.desktop1600}{
+  ${(p) => p.theme.media.desktop}{
     html{
       font-size: 20px;
+    }
+  }
+  ${(p) => p.theme.media.desktop1600}{
+    html{
+      font-size: 22px;
     }
   }
 `;

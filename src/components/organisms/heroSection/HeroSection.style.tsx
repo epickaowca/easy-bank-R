@@ -38,7 +38,6 @@ export const Picture = styled.div`
     height: 500px;
     & > img {
       position: absolute;
-      width: 500px;
       right: 0;
       transform: translate(150px, -120px);
       top: 0px;
@@ -79,25 +78,21 @@ export const BgImg = styled.div<{ bgMobile: string; bgDesktop: string }>`
     left: unset;
     right: 0;
     width: 700px;
+    height: auto;
+    aspect-ratio: 7 / 5;
     max-width: unset;
-    height: 100%;
     background-position: center;
     transform: translate(250px, -150px);
   }
   ${(p) => p.theme.media.desktop1000} {
     width: 750px;
-    height: 600px;
-    transform: translate(150px, -150px);
+    transform: translate(170px, -150px);
   }
   ${(p) => p.theme.media.desktop} {
     width: 900px;
-    height: 640px;
-    transform: translate(160px, -170px);
   }
   ${(p) => p.theme.media.desktop1600} {
     width: 950px;
-    height: 690px;
-    transform: translate(160px, -180px);
   }
 `;
 
@@ -106,12 +101,11 @@ export const Article = styled.article`
   flex-direction: column;
   align-items: center;
   max-width: 300px;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
   gap: 25px;
   margin-top: 40px;
   ${(p) => p.theme.media.tablet} {
-    margin: 0 auto;
     text-align: left;
     align-items: flex-start;
   }
@@ -119,19 +113,13 @@ export const Article = styled.article`
     gap: 35px;
     max-width: 400px;
     & > h1 {
-      font-size: 40px;
-    }
-    & > p {
-      font-size: 20px;
+      font-size: 2.2rem;
     }
   }
   ${(p) => p.theme.media.desktop1600} {
-    max-width: 500px;
+    max-width: 550px;
     & > h1 {
-      font-size: 50px;
-    }
-    & > p {
-      font-size: 20px;
+      max-width: 500px;
     }
   }
 `;
