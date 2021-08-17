@@ -7,6 +7,7 @@ declare module "styled-components" {
       desktop1000: "@media only screen and (min-width: 1000px)";
       desktop: "@media only screen and (min-width: 1200px)";
       desktop1600: "@media only screen and (min-width: 1600px)";
+      desktop1900: "@media only screen and (min-width: 1900px)";
     };
     colors: {
       headingText: "#2D314D";

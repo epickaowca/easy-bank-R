@@ -111,15 +111,15 @@ export const Article = styled.article`
   }
   ${(p) => p.theme.media.desktop1000} {
     gap: 35px;
-    max-width: 400px;
+    max-width: 370px;
     & > h1 {
       font-size: 2.2rem;
     }
   }
   ${(p) => p.theme.media.desktop1600} {
-    max-width: 550px;
+    max-width: 500px;
     & > h1 {
-      max-width: 500px;
+      max-width: 450px;
     }
   }
 `;
