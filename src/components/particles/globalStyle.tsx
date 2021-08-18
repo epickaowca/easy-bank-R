@@ -5,7 +5,6 @@ const GlobalStyles = createGlobalStyle`
   body {
     overflow-x: hidden;
     height: 100%;
-    background-color: ${(p) => p.theme.colors.primary};
   }
 
   a {
