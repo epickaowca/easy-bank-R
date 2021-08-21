@@ -8,6 +8,7 @@ export interface NavInterface extends StyledNavInterface {
 }
 
 const Navigation: FC<NavInterface> = ({ navItems, footerCase, onClick }) => {
+  console.log(footerCase);
   return (
     <StyledNav footerCase={footerCase}>
       <ul>

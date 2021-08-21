@@ -2,22 +2,20 @@ import { FC } from "react";
 import StyledMainSection from "./MainSection.style";
 import PostContainer from "../postContainer/PostContainer";
 import Typography from "../../atoms/typography/Typography";
+import Heading from "../../molecules/heading/Heading";
 
 interface MainSectionInterface {
   h1: string;
-  case: "articles" | "benefits";
+  postsCase?: boolean;
   p?: string;
 }
 
-const MainSection: FC<MainSectionInterface> = ({ h1, p }) => {
+const MainSection: FC<MainSectionInterface> = ({ postsCase, h1, p }) => {
   return (
     <StyledMainSection>
       <div>
-        <article>
-          <Typography textTag="h1" content={h1} />
-          {p && <Typography textTag="p" content={p} />}
-        </article>
-        <PostContainer />
+        <Heading h1={h1} p={p} />
+        <PostContainer postCase={postsCase} />
       </div>
     </StyledMainSection>
   );

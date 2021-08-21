@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export interface SCMInterface {
-  presentationCase: boolean;
+  presentationCase?: boolean;
 }
 
 const StyledSocialMedia = styled.div<SCMInterface>`

@@ -11,6 +11,6 @@ postCase.args = {
 };
 
 export default {
-  title: "organisms/PostContainer",
+  title: "organisms/postContainer",
   component: PostContainer,
 } as ComponentMeta<any>;

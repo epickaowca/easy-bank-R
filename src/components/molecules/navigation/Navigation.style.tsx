@@ -5,7 +5,14 @@ export interface StyledNavInterface {
 }
 
 const styles = {
-  footerCaseStyles: `
+  footerCaseStyles: `& > ul{
+    & > li{
+      & > a{
+        color: white;
+      }
+    }
+  }`,
+  footerCaseStylesTablet: `
       & > ul{
         height: 120px;
         flex-wrap: wrap;
@@ -45,11 +52,16 @@ const styles = {
 };
 
 const choosedStyles = (tablet: string, footerCase: boolean | undefined) => {
-  const { headerCase, footerCaseStyles, headerCaseTablet } = styles;
+  const {
+    headerCase,
+    footerCaseStyles,
+    footerCaseStylesTablet,
+    headerCaseTablet,
+  } = styles;
   return `
-    ${!footerCase && headerCase};
+    ${footerCase ? footerCaseStyles : headerCase};
     ${tablet}{
-      ${footerCase ? footerCaseStyles : headerCaseTablet}
+      ${footerCase ? footerCaseStylesTablet : headerCaseTablet}
     }
   `;
 };

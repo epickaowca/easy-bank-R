@@ -9,6 +9,6 @@ standardButton.args = {
 };
 
 export default {
-  title: "atoms/Button",
+  title: "atoms/button",
   component: Button,
 } as ComponentMeta<any>;

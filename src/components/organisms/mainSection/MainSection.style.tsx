@@ -7,24 +7,12 @@ const StyledMainSection = styled.section`
     display: flex;
     flex-direction: column;
     gap: 100px;
-    & > article {
-      max-width: 500px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      margin: auto;
-    }
   }
   ${(p) => p.theme.media.tablet} {
     & > div {
       padding: 70px 10px;
       max-width: 900px;
       margin: auto;
-      & > article {
-        margin: unset;
-        text-align: left;
-      }
     }
   }
   ${(p) => p.theme.media.desktop} {
