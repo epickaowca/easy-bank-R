@@ -6,6 +6,8 @@ interface styledInterface {
 }
 
 const StyledHeader = styled.header<styledInterface>`
+  position: relative;
+  z-index: 17;
   margin: auto;
   max-width: 1920px;
   background: white;

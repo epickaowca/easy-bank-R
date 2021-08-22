@@ -5,6 +5,8 @@ const GlobalStyles = createGlobalStyle`
   body {
     overflow-x: hidden;
     height: 100%;
+    margin: 0px !important;
+    padding: 0px !important;
   }
 
   a {

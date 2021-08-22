@@ -4,7 +4,6 @@ import { getImg } from "../../particles/utilities";
 
 export interface TypograpgyInterface extends STInterface {
   content?: string;
-  icoName?: string;
   onClick?: () => void;
 }
 

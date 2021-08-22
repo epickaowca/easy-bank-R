@@ -6,6 +6,7 @@ export type STInterface = {
   href?: string;
   presentationCase?: boolean;
   lightCase?: boolean;
+  icoName?: string;
 };
 
 const StyledText = styled.p.attrs<STInterface>((p) => ({
@@ -28,7 +29,7 @@ const StyledText = styled.p.attrs<STInterface>((p) => ({
       padding: 15px;
       padding-top: 20px;
   `}
-  ${(p) => p.textTag === "button" && btnStyles}
+  ${(p) => p.textTag === "button" && btnStyles};
 `;
 
 export default StyledText;
