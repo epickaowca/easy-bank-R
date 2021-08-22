@@ -3,6 +3,7 @@ import StyledHeader from "./Header.style";
 import Navigation from "../../molecules/navigation/Navigation";
 import Typography from "../../atoms/typography/Typography";
 import Button from "../../atoms/button/Button";
+import Logo from "../../atoms/logo/Logo";
 
 const navItems = [
   { content: "Home", href: "#" },
@@ -22,7 +23,7 @@ const Header: FC = () => {
   return (
     <StyledHeader hideNav={hideNav}>
       <div>
-        <Typography icoName="logo.svg" textTag="a" href="#" />
+        <Logo />
         <Navigation navItems={navItems} onClick={toggleNav} />
         <Button content="Request Invite" />
         <Typography

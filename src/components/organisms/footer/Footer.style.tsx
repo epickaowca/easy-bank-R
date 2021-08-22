@@ -2,8 +2,8 @@ import styled from "styled-components";
 import StyledP from "../../atoms/typography/Typography.style";
 
 const StyledFooter = styled.footer`
+  background: ${(p) => p.theme.colors.headingText};
   & > div {
-    background: ${(p) => p.theme.colors.headingText};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +16,12 @@ const StyledFooter = styled.footer`
       padding: 70px 40px;
       flex-direction: row;
       justify-content: space-between;
+    }
+  }
+  ${(p) => p.theme.media.desktop1600} {
+    & > div {
+      max-width: 1600px;
+      margin: auto;
     }
   }
 `;
@@ -49,6 +55,9 @@ export const LeftSide = styled.div`
     & > div {
       align-items: flex-start;
     }
+  }
+  ${(p) => p.theme.media.desktop1600} {
+    gap: 150px;
   }
 `;
 export const RightSide = styled.div`
