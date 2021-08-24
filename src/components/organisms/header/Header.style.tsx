@@ -1,17 +1,20 @@
 import styled from "styled-components";
-import StyledButton from "../../atoms/button/Button.style";
 
 interface styledInterface {
   hideNav: boolean;
 }
 
 const StyledHeader = styled.header<styledInterface>`
-  position: relative;
+  --visibility-v: ${(p) => (p.hideNav ? "hidden" : "visible")};
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 25px;
   z-index: 17;
-  margin: auto;
-  max-width: 1920px;
   background: white;
+  width: 100%;
+  position: relative;
   & > div {
+    margin: auto;
+    max-width: 1920px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,7 +24,8 @@ const StyledHeader = styled.header<styledInterface>`
       }
     }
     & > nav {
-      visibility: ${(p) => (p.hideNav ? "hidden" : "visible")};
+      z-index: 7;
+      visibility: var(--visibility-v);
     }
   }
   ${(p) => p.theme.media.tablet} {
@@ -29,7 +33,6 @@ const StyledHeader = styled.header<styledInterface>`
       & > nav {
         visibility: visible !important;
       }
-
       & > button {
         &:nth-child(3) {
           display: block;
@@ -39,6 +42,20 @@ const StyledHeader = styled.header<styledInterface>`
         }
       }
     }
+  }
+`;
+
+export const ShadowDiv = styled.div`
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  visibility: var(--visibility-v);
+  z-index: 5;
+  cursor: pointer;
+  ${(p) => p.theme.media.tablet} {
+    visibility: hidden !important;
   }
 `;
 

@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import StyledHeader from "./Header.style";
+import StyledHeader, { ShadowDiv } from "./Header.style";
 import Navigation from "../../molecules/navigation/Navigation";
 import Typography from "../../atoms/typography/Typography";
 import Button from "../../atoms/button/Button";
@@ -31,6 +31,7 @@ const Header: FC = () => {
           textTag="button"
           onClick={toggleNav}
         />
+        <ShadowDiv onClick={toggleNav}></ShadowDiv>
       </div>
     </StyledHeader>
   );

@@ -25,7 +25,7 @@ const styles = {
     }
   `,
   headerCase: `
-    padding: 15px 0px;
+    padding: 25px 0px;
     width: 90%;
     transform: translateX(-50%);
     top: 100px;
@@ -70,19 +70,22 @@ const StyledNav = styled.nav<StyledNavInterface>(
   ({
     footerCase,
     theme: {
-      media: { tablet, desktop1600, desktop },
+      media: { tablet, desktop1600, desktop, desktop1000 },
     },
   }) => `
   & > ul{
     display: flex;
-    gap: 15px;
+    gap: ${footerCase ? "15px" : "25px"};
     flex-direction: column;
     text-align: center;
+    ${desktop1000}{
+      gap: ${footerCase ? "15px" : "25px"};
+    }
     ${desktop}{
-      gap: 45px;
+      gap: ${footerCase ? "45px" : "55px"};
     }
     ${desktop1600}{
-      gap: 50px;
+      gap: ${footerCase ? "50px" : "70px"};
     }
   }
 }

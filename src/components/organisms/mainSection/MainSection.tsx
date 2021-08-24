@@ -1,18 +1,16 @@
 import { FC } from "react";
-import StyledMainSection from "./MainSection.style";
+import StyledMainSection, { SMSInterface } from "./MainSection.style";
 import PostContainer from "../postContainer/PostContainer";
-import Typography from "../../atoms/typography/Typography";
 import Heading from "../../molecules/heading/Heading";
 
-interface MainSectionInterface {
+interface MainSectionInterface extends SMSInterface {
   h1: string;
-  postsCase?: boolean;
   p?: string;
 }
 
 const MainSection: FC<MainSectionInterface> = ({ postsCase, h1, p }) => {
   return (
-    <StyledMainSection>
+    <StyledMainSection postsCase={postsCase}>
       <div>
         <Heading h1={h1} p={p} />
         <PostContainer postCase={postsCase} />

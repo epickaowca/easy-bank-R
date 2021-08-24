@@ -3,10 +3,11 @@ import Header from "../../components/organisms/header/Header";
 import HeroSection from "../../components/organisms/heroSection/HeroSection";
 import MainSection from "../../components/organisms/mainSection/MainSection";
 import Footer from "../../components/organisms/footer/Footer";
+import StyledHome from "./Home.style";
 
 const Home: FC = () => {
   return (
-    <div>
+    <StyledHome>
       <Header />
       <HeroSection />
       <MainSection
@@ -15,7 +16,7 @@ const Home: FC = () => {
       />
       <MainSection h1="Latest Articles" postsCase />
       <Footer />
-    </div>
+    </StyledHome>
   );
 };
 

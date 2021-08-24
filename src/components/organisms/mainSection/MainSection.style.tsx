@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
-const StyledMainSection = styled.section`
-  background-color: ${(p) => p.theme.colors.primary};
+export interface SMSInterface {
+  postsCase?: boolean;
+}
+
+const StyledMainSection = styled.section<SMSInterface>`
+  background-color: ${(p) =>
+    p.postsCase ? p.theme.colors.primary : p.theme.colors.secondary};
   & > div {
     padding: 45px 10px;
     display: flex;

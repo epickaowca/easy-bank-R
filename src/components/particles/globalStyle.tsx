@@ -4,9 +4,11 @@ const GlobalStyles = createGlobalStyle`
   html,
   body {
     overflow-x: hidden;
-    height: 100%;
     margin: 0px !important;
     padding: 0px !important;
+  }
+  body{
+    min-height: 100vh;
   }
 
   a {
