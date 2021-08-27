@@ -1,6 +1,9 @@
 import { FC } from "react";
 import Typography from "../../atoms/typography/Typography";
-import StyledArticlePost, { SAPInterface } from "./ArticlePost.style";
+import StyledArticlePost, {
+  SAPInterface,
+  ContentDiv,
+} from "./ArticlePost.style";
 import { getImg } from "../../particles/utilities";
 
 interface APInterface extends SAPInterface {
@@ -19,7 +22,7 @@ const ArticlePost: FC<APInterface> = ({
   return (
     <StyledArticlePost author={author}>
       <img src={imgH} alt="Image" />
-      <div>
+      <ContentDiv author={author}>
         {author && <Typography content={author} textTag="p" />}
         <Typography
           content={h3Content}
@@ -27,7 +30,7 @@ const ArticlePost: FC<APInterface> = ({
           lightCase={author ? true : false}
         />
         <Typography content={pContent} textTag="p" />
-      </div>
+      </ContentDiv>
     </StyledArticlePost>
   );
 };

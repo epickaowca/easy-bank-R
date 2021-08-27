@@ -4,92 +4,76 @@ export interface StyledNavInterface {
   footerCase?: boolean;
 }
 
-const styles = {
-  footerCaseStyles: `& > ul{
-    & > li{
-      & > a{
+const footerStylesTablet = css`
+  & > ul {
+    height: 120px;
+    flex-wrap: wrap;
+    gap: 20px 45px;
+    align-content: start;
+    & > li {
+      flex-grow: 0;
+    }
+  }
+`;
+
+const footerStyles = css`
+  & > ul {
+    & > li {
+      & > a {
         color: white;
       }
     }
-  }`,
-  footerCaseStylesTablet: `
-      & > ul{
-        height: 120px;
-        flex-wrap: wrap;
-        gap: 20px 45px;
-        align-content: start;
-        & > li {
-          flex-grow: 0;
-        }
-      }
-    }
-  `,
-  headerCase: `
-    padding: 25px 0px;
-    width: 90%;
-    transform: translateX(-50%);
-    top: 100px;
-    left: 50%;
-    border-radius: 5px;
-    background: white;
-    position: absolute;
-    box-shadow: 0px 0px 15px rgba(0,0,0,.2);
-    `,
-  headerCaseTablet: `
-    padding: unset;
-    width: unset;
-    transform: unset;
-    top: unset;
-    left: unset;
-    border-radius: unset;
-    box-shadow: unset;
-  position: relative;
-    & > ul {
-      flex-direction: row;
-    }
   }
-  `,
-};
+`;
 
-const choosedStyles = (tablet: string, footerCase: boolean | undefined) => {
-  const {
-    headerCase,
-    footerCaseStyles,
-    footerCaseStylesTablet,
-    headerCaseTablet,
-  } = styles;
-  return `
-    ${footerCase ? footerCaseStyles : headerCase};
-    ${tablet}{
-      ${footerCase ? footerCaseStylesTablet : headerCaseTablet}
-    }
-  `;
-};
+const headerStyles = css`
+  padding: 25px 0px;
+  width: 90%;
+  transform: translateX(-50%);
+  top: 100px;
+  left: 50%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  background: white;
+`;
+
+const headerStylesTablet = css`
+  all: unset;
+  position: relative;
+  & > ul {
+    flex-direction: row;
+  }
+`;
 
 const StyledNav = styled.nav<StyledNavInterface>(
   ({
     footerCase,
     theme: {
-      media: { tablet, desktop1600, desktop, desktop1000 },
+      media: { tablet, desktop, desktop1600 },
     },
   }) => `
-  & > ul{
+  & > ul {
     display: flex;
-    gap: ${footerCase ? "15px" : "25px"};
+    gap: 25px;
     flex-direction: column;
     text-align: center;
-    ${desktop1000}{
-      gap: ${footerCase ? "15px" : "25px"};
+    & > li{
+      &:hover{
+        opacity: .7;
+      }
     }
-    ${desktop}{
-      gap: ${footerCase ? "45px" : "55px"};
+    ${desktop} {
+      gap: 45px;
     }
-    ${desktop1600}{
+    ${desktop1600} {
       gap: ${footerCase ? "50px" : "70px"};
     }
   }
-}
-${choosedStyles(tablet, footerCase)}
+  ${footerCase ? footerStyles : headerStyles}
+  ${tablet} {
+    ${footerCase ? footerStylesTablet : headerStylesTablet}
+  }
 `
 );
 

@@ -39,11 +39,6 @@ const GlobalStyles = createGlobalStyle`
       font-size: 22px;
     }
   }
-  ${(p) => p.theme.media.desktop1900}{
-    html{
-      font-size: 22px;
-    }
-  }
 `;
 
 export default GlobalStyles;
