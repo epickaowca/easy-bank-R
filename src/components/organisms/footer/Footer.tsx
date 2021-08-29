@@ -4,7 +4,7 @@ import Typography from "../../atoms/typography/Typography";
 import SocialMedia from "../../molecules/socialMedia/SocialMedia";
 import Navigation from "../../molecules/navigation/Navigation";
 import Button from "../../atoms/button/Button";
-import { ReactComponent as LogoSvg } from "../../assets/logo.svg";
+import Logo from "../../atoms/logo/Logo";
 
 const navItems = [
   { content: "About Us", href: "#" },
@@ -29,7 +29,7 @@ const Footer: FC = () => {
       <div>
         <LeftSide>
           <div>
-            <LogoSvg />
+            <Logo whiteCase />
             <SocialMedia socialTab={socialTab} />
           </div>
           <Navigation navItems={navItems} footerCase />

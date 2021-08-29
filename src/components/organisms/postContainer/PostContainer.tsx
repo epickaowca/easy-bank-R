@@ -14,13 +14,8 @@ const PostContainer: FC<{ postCase?: boolean }> = ({ postCase }) => {
   const res: resInterface[] = postCase ? data.tabH2 : data.tabH;
   return (
     <StyledPostContainer>
-      {res.map(({ imgName, h3Content, pContent, author }) => (
-        <ArticlePost
-          imgName={imgName}
-          h3Content={h3Content}
-          pContent={pContent}
-          author={author}
-        />
+      {res.map((item) => (
+        <ArticlePost {...item} />
       ))}
     </StyledPostContainer>
   );

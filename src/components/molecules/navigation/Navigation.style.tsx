@@ -1,50 +1,8 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export interface StyledNavInterface {
   footerCase?: boolean;
 }
-
-const footerStylesTablet = css`
-  & > ul {
-    height: 120px;
-    flex-wrap: wrap;
-    gap: 20px 45px;
-    align-content: start;
-    & > li {
-      flex-grow: 0;
-    }
-  }
-`;
-
-const footerStyles = css`
-  & > ul {
-    & > li {
-      & > a {
-        color: white;
-      }
-    }
-  }
-`;
-
-const headerStyles = css`
-  padding: 25px 0px;
-  width: 90%;
-  transform: translateX(-50%);
-  top: 100px;
-  left: 50%;
-  border-radius: 5px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  background: white;
-`;
-
-const headerStylesTablet = css`
-  all: unset;
-  position: relative;
-  & > ul {
-    flex-direction: row;
-  }
-`;
 
 const StyledNav = styled.nav<StyledNavInterface>(
   ({
@@ -70,9 +28,45 @@ const StyledNav = styled.nav<StyledNavInterface>(
       gap: ${footerCase ? "50px" : "70px"};
     }
   }
-  ${footerCase ? footerStyles : headerStyles}
-  ${tablet} {
-    ${footerCase ? footerStylesTablet : headerStylesTablet}
+
+  &.FC{
+    & > ul {
+      & > li {
+        & > a {
+          color: white;
+        }
+      }
+    }
+    ${tablet}{
+      & > ul {
+        height: 120px;
+        flex-wrap: wrap;
+        gap: 20px 45px;
+        align-content: start;
+        & > li {
+          flex-grow: 0;
+        }
+      }
+    }
+  }
+
+  &.HC{
+    padding: 25px 0px;
+    width: 90%;
+    transform: translateX(-50%);
+    top: 100px;
+    left: 50%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    background: white;
+    ${tablet}{
+      all: unset;
+      position: relative;
+      & > ul {
+        flex-direction: row;
+      }
+    }
   }
 `
 );

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import StyledNav, { StyledNavInterface } from "./Navigation.style";
 import Typography from "../../atoms/typography/Typography";
+import cs from "classnames";
 
 export interface NavInterface extends StyledNavInterface {
   navItems: { content: string; href: string }[];
@@ -9,7 +10,7 @@ export interface NavInterface extends StyledNavInterface {
 
 const Navigation: FC<NavInterface> = ({ navItems, footerCase, onClick }) => {
   return (
-    <StyledNav footerCase={footerCase}>
+    <StyledNav className={cs({ FC: footerCase, HC: !footerCase })}>
       <ul>
         {navItems.map((elem, index) => (
           <li key={index}>

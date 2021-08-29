@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as LogoIco } from "../../assets/logo.svg";
+import { ReactComponent as LogoIco } from "../../../assets/logo.svg";
 
 export interface SLInterface {
   whiteCase?: boolean;

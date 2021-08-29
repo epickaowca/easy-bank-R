@@ -4,34 +4,41 @@ export interface SMSInterface {
   postsCase?: boolean;
 }
 
-const StyledMainSection = styled.section<SMSInterface>`
-  background-color: ${(p) =>
-    p.postsCase ? p.theme.colors.primary : p.theme.colors.secondary};
+const StyledMainSection = styled.section<SMSInterface>(
+  ({
+    postsCase,
+    theme: {
+      colors: { primary, secondary },
+      media: { tablet, desktop, desktop1900 },
+    },
+  }) => `
+  background-color: ${postsCase ? primary : secondary};
   & > div {
     padding: 45px 10px;
     display: flex;
     flex-direction: column;
     gap: 100px;
   }
-  ${(p) => p.theme.media.tablet} {
+  ${tablet} {
     & > div {
       padding: 70px 10px;
       max-width: 900px;
       margin: auto;
     }
   }
-  ${(p) => p.theme.media.desktop} {
+  ${desktop} {
     & > div {
       padding: 100px 10px;
       max-width: 1450px;
     }
   }
-  ${(p) => p.theme.media.desktop1900} {
+  ${desktop1900} {
     & > div {
       padding: 120px 10px;
       max-width: 1700px;
     }
   }
-`;
+`
+);
 
 export default StyledMainSection;

@@ -15,7 +15,7 @@ const StyledBtn = styled.button`
   );
   padding: 12px 25px;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   border-radius: 20px;
 `;
 

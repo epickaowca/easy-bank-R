@@ -1,9 +1,11 @@
 import { FC } from "react";
-import StyledSocialMedia, { SCMInterface } from "./SocialMedia.style";
+import StyledSocialMedia from "./SocialMedia.style";
 import Typography from "../../atoms/typography/Typography";
+import cs from "classnames";
 
-interface SocialMediaInterface extends SCMInterface {
+interface SocialMediaInterface {
   socialTab?: { icoName: string; href: string }[];
+  presentationCase?: boolean;
 }
 
 const SocialMedia: FC<SocialMediaInterface> = ({
@@ -11,7 +13,7 @@ const SocialMedia: FC<SocialMediaInterface> = ({
   presentationCase,
 }) => {
   return (
-    <StyledSocialMedia presentationCase={presentationCase}>
+    <StyledSocialMedia className={cs({ PC: presentationCase })}>
       {socialTab?.map(({ icoName, href }, index) => (
         <Typography key={index} icoName={icoName} href={href} textTag="a" />
       ))}

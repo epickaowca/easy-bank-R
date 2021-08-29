@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import StyledP from "../../atoms/typography/Typography.style";
 
-const StyledFooter = styled.footer`
-  background: ${(p) => p.theme.colors.headingText};
+const StyledFooter = styled.footer(
+  ({
+    theme: {
+      media: { desktop1000, desktop1600 },
+      colors: { headingText },
+    },
+  }) => `
+  background: ${headingText};
   & > div {
     display: flex;
     flex-direction: column;
@@ -11,22 +17,31 @@ const StyledFooter = styled.footer`
     padding: 50px 5px;
     text-align: center;
   }
-  ${(p) => p.theme.media.desktop1000} {
+  ${desktop1000} {
     & > div {
-      padding: 70px 40px;
+      padding: 60px 40px;
+      padding-top: 100px;
       flex-direction: row;
       justify-content: space-between;
     }
   }
-  ${(p) => p.theme.media.desktop1600} {
+  ${desktop1600} {
     & > div {
+      padding-top: 120px;
+      padding-bottom: 70px;
       max-width: 1600px;
       margin: auto;
     }
   }
-`;
+`
+);
 
-export const LeftSide = styled.div`
+export const LeftSide = styled.div(
+  ({
+    theme: {
+      media: { tablet, desktop1000, desktop1600 },
+    },
+  }) => `
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,30 +51,23 @@ export const LeftSide = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    & > svg {
-      width: 8.68rem;
-      height: 1.25rem;
-      & > g {
-        & > path {
-          fill: white;
-        }
-      }
-    }
   }
-  ${(p) => p.theme.media.tablet} {
+  ${tablet} {
     align-items: unset;
   }
-  ${(p) => p.theme.media.desktop1000} {
+  ${desktop1000} {
     gap: 90px;
     flex-direction: row;
     & > div {
       align-items: flex-start;
     }
   }
-  ${(p) => p.theme.media.desktop1600} {
+  ${desktop1600} {
     gap: 150px;
   }
-`;
+`
+);
+
 export const RightSide = styled.div`
   display: flex;
   flex-direction: column;

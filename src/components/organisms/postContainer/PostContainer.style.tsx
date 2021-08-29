@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
-const StyledPostContainer = styled.div`
+const StyledPostContainer = styled.div(
+  ({
+    theme: {
+      media: { tablet, desktop, desktop1900 },
+    },
+  }) => `
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 70px;
-  ${(p) => p.theme.media.tablet} {
+  ${tablet} {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -13,18 +18,19 @@ const StyledPostContainer = styled.div`
       width: 40%;
     }
   }
-  ${(p) => p.theme.media.desktop} {
+  ${desktop} {
     flex-wrap: nowrap;
     & > article {
       width: auto;
       max-width: 270px;
     }
   }
-  ${(p) => p.theme.media.desktop1900} {
+  ${desktop1900} {
   }
   & > article {
     max-width: 360px;
   }
-`;
+`
+);
 
 export default StyledPostContainer;

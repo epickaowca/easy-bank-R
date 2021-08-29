@@ -5,9 +5,9 @@ import StyledHeroSection, {
   Picture,
 } from "./HeroSection.style";
 import Typography from "../../atoms/typography/Typography";
-import mockupsImg from "../../assets/image-mockups.png";
-import bgMobile from "../../assets/bg-intro-mobile.svg";
-import bgDesktop from "../../assets/bg-intro-desktop.svg";
+import mockupsImg from "../../../assets/image-mockups.png";
+import bgMobile from "../../../assets/bg-intro-mobile.svg";
+import bgDesktop from "../../../assets/bg-intro-desktop.svg";
 import Button from "../../atoms/button/Button";
 
 const HeroSection: FC = () => {

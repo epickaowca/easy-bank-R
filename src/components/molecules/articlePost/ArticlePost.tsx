@@ -5,6 +5,7 @@ import StyledArticlePost, {
   ContentDiv,
 } from "./ArticlePost.style";
 import { getImg } from "../../particles/utilities";
+import cs from "classnames";
 
 interface APInterface extends SAPInterface {
   imgName: string;
@@ -19,8 +20,9 @@ const ArticlePost: FC<APInterface> = ({
   author,
 }) => {
   const imgH = getImg(imgName);
+
   return (
-    <StyledArticlePost author={author}>
+    <StyledArticlePost author={author} className={cs({ authorCS: author })}>
       <img src={imgH} alt="Image" />
       <ContentDiv author={author}>
         {author && <Typography content={author} textTag="p" />}
