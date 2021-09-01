@@ -9,33 +9,31 @@ const StyledMainSection = styled.section<SMSInterface>(
     postsCase,
     theme: {
       colors: { primary, secondary },
-      media: { tablet, desktop, desktop1900 },
+      media: { tablet, tablet850, desktop1600, desktop1900 },
     },
   }) => `
   background-color: ${postsCase ? primary : secondary};
   & > div {
-    padding: 45px 10px;
+    padding: 80px 10px;
     display: flex;
     flex-direction: column;
     gap: 100px;
-  }
-  ${tablet} {
-    & > div {
-      padding: 70px 10px;
-      max-width: 900px;
+    ${tablet}{
+      gap: 70px;
       margin: auto;
+      padding: 80px 5px;
+      padding-left: 50px;
+      max-width: 1480px;
     }
-  }
-  ${desktop} {
-    & > div {
-      padding: 100px 10px;
-      max-width: 1450px;
+    ${tablet850}{
+      padding: 80px 50px;
     }
-  }
-  ${desktop1900} {
-    & > div {
+    ${desktop1600}{
+      max-width: 1570px;
+    }
+    ${desktop1900}{
       padding: 120px 10px;
-      max-width: 1700px;
+      max-width: 1600px;
     }
   }
 `

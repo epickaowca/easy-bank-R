@@ -3,9 +3,10 @@ import styled from "styled-components";
 const StyledPostContainer = styled.div(
   ({
     theme: {
-      media: { tablet, desktop, desktop1900 },
+      media: { tablet, desktop1300, desktop1600 },
     },
   }) => `
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,22 +14,17 @@ const StyledPostContainer = styled.div(
   ${tablet} {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    & > article {
-      width: 40%;
-    }
+    align-items: flex-start;
+    gap: 70px 20px;
   }
-  ${desktop} {
-    flex-wrap: nowrap;
+  ${desktop1300} {
+    gap: 25px
     & > article {
       width: auto;
-      max-width: 270px;
     }
   }
-  ${desktop1900} {
-  }
-  & > article {
-    max-width: 360px;
+  ${desktop1600}{
+    justify-content: space-between;
   }
 `
 );

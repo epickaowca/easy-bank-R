@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledHeroSection = styled.section`
   background: ${(p) => p.theme.colors.primary};
-  padding-bottom: 50px;
+  padding-bottom: 80px;
   ${(p) => p.theme.media.tablet} {
     & > div {
       max-width: 1920px;

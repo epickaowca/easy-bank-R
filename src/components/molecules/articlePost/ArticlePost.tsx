@@ -3,6 +3,7 @@ import Typography from "../../atoms/typography/Typography";
 import StyledArticlePost, {
   SAPInterface,
   ContentDiv,
+  Img,
 } from "./ArticlePost.style";
 import { getImg } from "../../particles/utilities";
 import cs from "classnames";
@@ -23,7 +24,7 @@ const ArticlePost: FC<APInterface> = ({
 
   return (
     <StyledArticlePost author={author} className={cs({ authorCS: author })}>
-      <img src={imgH} alt="Image" />
+      <Img imgSrc={imgH} author={author} />
       <ContentDiv author={author}>
         {author && <Typography content={author} textTag="p" />}
         <Typography

@@ -16,18 +16,17 @@ const presentationStyle = `
 `;
 
 const choosenTag = (tag: string) => {
-  if (tag !== ("h1" || "p" || "h3")) return "";
-
+  if (!Object.keys(stylesH).includes(tag)) return "";
   return `
   color: ${stylesH[tag][0]};
-  font-size: ${stylesH[tag][1]}
+  font-size: ${stylesH[tag][1]};
   `;
 };
 
 const stylesH: {
   [key: string]: [string, string];
 } = {
-  h1: ["headingText", "2rem"],
+  h1: ["#2D314D", "2rem"],
   p: ["rgba(0,0,0,.5)", "1rem"],
   h3: ["black", "1.2rem"],
 };
