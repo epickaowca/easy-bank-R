@@ -3,6 +3,7 @@ import StyledHeroSection, {
   BgImg,
   Article,
   Picture,
+  StyledImg,
 } from "./HeroSection.style";
 import Typography from "../../atoms/typography/Typography";
 import mockupsImg from "../../../assets/image-mockups.png";
@@ -16,15 +17,20 @@ const HeroSection: FC = () => {
       <div>
         <Picture>
           <BgImg bgMobile={bgMobile} bgDesktop={bgDesktop} />
-          <img src={mockupsImg} alt="heroImage" />
+          <StyledImg src={mockupsImg} alt="heroImage" />
         </Picture>
         <Article>
-          <Typography textTag="h1" content="Next generation digital banking" />
-          <Typography
-            textTag="p"
-            content="Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more."
-          />
-          <Button content="Request Invite" />
+          <div>
+            <Typography
+              textTag="h1"
+              content="Next generation digital banking"
+            />
+            <Typography
+              textTag="p"
+              content="Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing, and much more."
+            />
+            <Button content="Request Invite" />
+          </div>
         </Article>
       </div>
     </StyledHeroSection>

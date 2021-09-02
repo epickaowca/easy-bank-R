@@ -1,5 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import StyledP from "../../atoms/typography/Typography.style";
+
+const flexColumn = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const StyledFooter = styled.footer(
   ({
@@ -10,9 +16,7 @@ const StyledFooter = styled.footer(
   }) => `
   background: ${headingText};
   & > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    ${flexColumn};
     gap: 25px;
     padding: 50px 5px;
     text-align: center;
@@ -42,9 +46,7 @@ export const LeftSide = styled.div(
       media: { tablet, desktop1000, desktop1600 },
     },
   }) => `
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  ${flexColumn};
   gap: 25px;
   & > div {
     display: flex;
