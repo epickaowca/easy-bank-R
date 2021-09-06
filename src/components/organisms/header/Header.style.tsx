@@ -11,7 +11,7 @@ const StyledHeader = styled.header<styledInterface>`
   z-index: 17;
   background: white;
   width: 100%;
-  position: relative;
+  position: fixed;
   & > div {
     margin: auto;
     max-width: 1920px;

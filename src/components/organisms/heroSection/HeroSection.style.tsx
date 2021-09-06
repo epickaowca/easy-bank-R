@@ -3,13 +3,15 @@ import styled, { css } from "styled-components";
 const StyledHeroSection = styled.section(
   ({
     theme: {
-      media: { tablet, desktop1000, desktop },
+      media: { tablet, desktop1000, desktop, desktop1600 },
       colors: { primary },
     },
   }) => `
+  padding-top: 70px;
   background: ${primary};
   padding-bottom: 80px;
   ${tablet} {
+    padding-top: 92px;
     & > div {
       position: relative;
       max-width: 1920px;
@@ -17,10 +19,14 @@ const StyledHeroSection = styled.section(
     }
   }
   ${desktop1000} {
-    padding: 50px 0;
+    padding-bottom: 50px;
   }
   ${desktop} {
-    padding: 70px 0;
+    padding-top: 95px;
+    padding-bottom: 70px;
+  }
+  ${desktop1600}{
+    padding-top: 100px;
   }
 `
 );

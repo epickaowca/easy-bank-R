@@ -14,8 +14,8 @@ const SocialMedia: FC<SocialMediaInterface> = ({
 }) => {
   return (
     <StyledSocialMedia className={cs({ PC: presentationCase })}>
-      {socialTab?.map(({ icoName, href }, index) => (
-        <Typography key={index} icoName={icoName} href={href} textTag="a" />
+      {socialTab?.map((item, index) => (
+        <Typography key={index} {...item} textTag="a" />
       ))}
     </StyledSocialMedia>
   );

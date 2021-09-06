@@ -21,10 +21,10 @@ const ArticlePost: FC<APInterface> = ({
   author,
 }) => {
   const imgH = getImg(imgName);
-
+  const ImgClasses = cs({ AuthorCSImg: author, AuthorCSImgNo: !author });
   return (
     <StyledArticlePost author={author} className={cs({ authorCS: author })}>
-      <Img imgSrc={imgH} author={author} />
+      <Img imgSrc={imgH} className={ImgClasses} />
       <ContentDiv author={author}>
         {author && <Typography content={author} textTag="p" />}
         <Typography

@@ -8,16 +8,22 @@ const borderRadiusFunc = (side: "top" | "bottom") => {
   return `border-${side}-left-radius: 7px; border-${side}-right-radius: 7px;`;
 };
 
-export const Img = styled.div<{ imgSrc: string; author?: string }>`
-  width: ${(p) => (p.author ? "100%;" : "72px;")}
-    ${(p) =>
-      p.author
-        ? `padding-top: 66.67% !important; ${borderRadiusFunc("top")}`
-        : "height: 72px;"};
-  background-image: url(${(p) => p.imgSrc}) !important;
+export const Img = styled.div<{ imgSrc: string }>(
+  ({ imgSrc }) => `
+  &.AuthorCSImg{
+    width: 100%;
+    padding-top: 66.67% !important;
+    ${borderRadiusFunc("top")}
+  }
+  &.AuthorCSImgNo{
+    width: 72px;
+    height: 72px;
+  }
+  background-image: url(${imgSrc}) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-`;
+`
+);
 
 const StyledArticlePost = styled.article<SAPInterface>(
   ({

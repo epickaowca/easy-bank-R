@@ -1,5 +1,6 @@
 import { FC } from "react";
 import StyledFooter, { LeftSide, RightSide } from "./Footer.style";
+// import cos from "@ato";
 import Typography from "../../atoms/typography/Typography";
 import SocialMedia from "../../molecules/socialMedia/SocialMedia";
 import Navigation from "../../molecules/navigation/Navigation";
